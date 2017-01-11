@@ -1,0 +1,732 @@
+FORMAT: 1A
+HOST: http://api.dmassassins.com
+
+# DMAssassins
+Games API is allows game creation/access.
+
+# Group User/Game
+Games resource in the context of a user
+
+## Game [/user/<user_id>/game/]
+### List all Games a user is in or can join [GET]
++ Response 200 (application/json)
+
+        {
+           "available":null,
+           "member":[
+              {
+                 "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+                 "game_name":"DMatUF",
+                 "game_started":false,
+                 "game_has_password":true,
+                 "game_properties":{
+
+                 }
+              },
+              {
+                 "game_id":"28a181c9-860a-4843-980f-a1d30e354721",
+                 "game_name":"Facebook Test",
+                 "game_started":true,
+                 "game_has_password":false,
+                 "game_properties":{
+
+                 }
+              },
+              {
+                 "game_id":"ddca9671-a814-44f0-8773-7e0048e8d386",
+                 "game_name":"Sigma Kappa",
+                 "game_started":false,
+                 "game_has_password":false,
+                 "game_properties":{
+
+                 }
+              },
+              {
+                 "game_id":"8989a106-8116-43da-93f6-1c5618139551",
+                 "game_name":"Silicon Valley Test Game",
+                 "game_started":false,
+                 "game_has_password":false,
+                 "game_properties":{
+
+                 }
+              },
+              {
+                 "game_id":"3a2a5520-4bf1-43a3-b88c-52f99373359e",
+                 "game_name":"Tau Kappa Epsilon Brotherhood Event",
+                 "game_started":true,
+                 "game_has_password":true,
+                 "game_properties":{
+
+                 }
+              },
+              {
+                 "game_id":"e288edc7-cc4e-4885-a3b5-e328f154c3ad",
+                 "game_name":"YCombinator",
+                 "game_started":false,
+                 "game_has_password":false,
+                 "game_properties":{
+
+                 }
+              }
+           ]
+        }
+
+### Create a Game [POST]
++ Request (application/json)
+
+        {
+           "game_name":"YCombinator",
+           "game_password":null,
+           "game_id":"",
+           "game_started":false,
+           "game_has_password":false,
+           "member":true
+        }
+
++ Response 201 (application/json)
+
+        {
+           "game_id":"e288edc7-cc4e-4885-a3b5-e328f154c3ad",
+           "game_name":"YCombinator",
+           "game_started":false,
+           "game_has_password":false,
+           "game_properties":{
+              "timezone":"America/New_York"
+           }
+        }
+
+# Group Game Id
+## Leaderboard [/game/<game_id>/leaderboard/]
+### Get the leaderboard for a game [GET]
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+            "teams_enabled":false,
+            "users":[
+              {
+                 "name":"Zac Johnson",
+                 "kills":0,
+                 "alive":true,
+                 "team_name":""
+              },
+              {
+                 "name":"Ryan Lewis",
+                 "kills":0,
+                 "alive":true,
+                 "team_name":""
+              },
+              {
+                 "name":"Ginny Weasley",
+                 "kills":0,
+                 "alive":true,
+                 "team_name":""
+              },
+              {
+                 "name":"Hermione Granger",
+                 "kills":0,
+                 "alive":true,
+                 "team_name":""
+              },
+              {
+                 "name":"Ron Weasley",
+                 "kills":0,
+                 "alive":true,
+                 "team_name":""
+              },
+              {
+                 "name":"Harry Potter",
+                 "kills":0,
+                 "alive":true,
+                 "team_name":""
+              }
+           ],
+           "teams":{
+
+           }
+        }
+
+
+## Kill Timer [/game/<game_id>/kill_timer/]
+### Get the kill timer for a game [GET]
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "create_ts":1426979770,
+           "execute_ts":1427066170,
+           "game_id":"28a181c9-860a-4843-980f-a1d30e354721"
+        }
+
+### Delete a kill timer [DELETE]
+
++ Request (application/json)
+
++ Response 204 (application/json)
+
+## Plot Twist [/game/<game_id>/plot_twist/]
+### Start a plot twist [POST]
+
++ Request (application/json)
+
+        {
+           "plot_twist_name":"timer_24",
+           "send_email":false
+        }
+
++ Response 201 (application/json)
+
+        {
+           "game_id":"28a181c9-860a-4843-980f-a1d30e354721",
+           "game_name":"Facebook Test",
+           "game_started":true,
+           "game_has_password":false,
+           "game_properties":{
+              "has_kill_timer":"false",
+              "kill_mode":"normal",
+              "rules":"##Killing\n\nTo assassinate your target perform the following steps:\n\n1. Shoot them with silly string. \n2. Ask the user for their secret\n3. Enter their secret on the website.\n4. Receive your new target.\n\nIf your assassins shoots you, you are eliminated from the game and you must give up your secret.\nYou are only allowed to kill the person who is your current target on the website.\n\n##Defense\nTo defend your self from assassination, you may shoot your assassin with silly string. This will grant you 30 minutes of immunity.\n\n##Safe Zones\nThe third-floor corridor is forbidden to all users who do not wish to die a most painful death.\n\n##Winners\nThe winners will be the last player standing and the player with the most kills.\nIn the event of a draw or multiple winners, the distribution of prizes will be determined by the admin.\n\n##Pauses\nThe game may be paused at the admin's discretion. You will be notified of this by email.\n\n##Plot Twists\n\nThere will be several plot twists that will change the game dynamic. You will be notified of these by email.\n\n##Cheating\nIf a player is caught cheating they will be completely removed from the game.\nIf someone refuses to give up their secret, you can contact the admin at [matt+admin@dmassassins.com](mailto:matt+admin@dmassassins.com).",
+              "timezone":"America/New_York"
+           }
+        }
+
+## Rules [/game/<game_id>/rules/]
+### Get the rules for a game [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+
+        {
+            "rules": "##Killing\ \ To assassinate your target perform the following steps:\ \ 1. Shoot them with silly string. \ 2. Ask the user for their secret\ 3. Enter their secret on the website.\ 4. Receive your new target.\ \ If your assassins shoots you, you are eliminated from the game and you must give up your secret.\ You are only allowed to kill the person who is your current target on the website.\ \ ##Defense\ To defend your self from assassination, you may shoot your assassin with silly string. This will grant you 30 minutes of immunity.\ \ ##Safe Zones\ The third-floor corridor is forbidden to all users who do not wish to die a most painful death.\ \ ##Winners\ The winners will be the last player standing and the player with the most kills.\ In the event of a draw or multiple winners, the distribution of prizes will be determined by the admin.\ \ ##Pauses\ The game may be paused at the admin's discretion. You will be notified of this by email.\ \ ##Plot Twists\ \ There will be several plot twists that will change the game dynamic. You will be notified of these by email.\ \ ##Cheating\ If a player is caught cheating they will be completely removed from the game.\ If someone refuses to give up their secret, you can contact the admin at [matt+admin@dmassassins.com](mailto:matt+admin@dmassassins.com)."
+        }
+
+
+### Update rules for a game [PUT]
+
++ Request (application/json)
+
+        {
+            "rules":"##Killing\n\nTo assassinate your target perform the following steps:\n\n1. Shoot them with silly string. \n2. Ask the user for their secret\n3. Enter their secret on the website.\n4. Receive your new target.\n\nIf your assassins shoots you, you are eliminated from the game and you must give up your secret.\nYou are only allowed to kill the person who is your current target on the website.\n\n##Defense\nTo defend your self from assassination, you may shoot your assassin with silly string. This will grant you 30 minutes of immunity.\n\n##Safe Zones\nThe third-floor corridor is forbidden to all users who do not wish to die a most painful death.\n\n##Winners\nThe winners will be the last player standing and the player with the most kills.\nIn the event of a draw or multiple winners, the distribution of prizes will be determined by the admin.\n\n##Pauses\nThe game may be paused at the admin's discretion. You will be notified of this by email.\n\n##Plot Twists\n\nThere will be several plot twists that will change the game dynamic. You will be notified of these by email.\n\n##Cheating\nIf a player is caught cheating they will be completely removed from the game.\nIf someone refuses to give up their secret, you can contact the admin at [matt+admin@dmassassins.com](mailto:matt+admin@dmassassins.com)."
+        }
+
++ Response 204 (application/json)
+
+## Targets [/game/<game_id>/targets/]
+### Get targets for a game [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "0195ec3c-d53f-4963-b645-a31d457e2079":{
+              "assassin_id":"0195ec3c-d53f-4963-b645-a31d457e2079",
+              "assassin_name":"Hermione Granger",
+              "assassin_team_name":"No Team",
+              "assassin_user_role":"dm_user",
+              "assassin_kills":0,
+              "target_id":"43114969-c022-40b3-8056-8c04b1611ccc",
+              "target_name":"Ginny Weasley",
+              "target_team_name":"No Team",
+              "target_user_role":"dm_user",
+              "target_kills":0
+           },
+           "43114969-c022-40b3-8056-8c04b1611ccc":{
+              "assassin_id":"43114969-c022-40b3-8056-8c04b1611ccc",
+              "assassin_name":"Ginny Weasley",
+              "assassin_team_name":"No Team",
+              "assassin_user_role":"dm_user",
+              "assassin_kills":0,
+              "target_id":"7dccc355-16c7-4d52-879a-8d35c0adc1dc",
+              "target_name":"Harry Potter",
+              "target_team_name":"No Team",
+              "target_user_role":"dm_user",
+              "target_kills":0
+           },
+           "4e14e850-786d-46ad-9c5d-368a254b3689":{
+              "assassin_id":"4e14e850-786d-46ad-9c5d-368a254b3689",
+              "assassin_name":"Ryan Lewis",
+              "assassin_team_name":"No Team",
+              "assassin_user_role":"dm_user",
+              "assassin_kills":0,
+              "target_id":"63cb7690-9468-4982-a4da-95ec2ffe7319",
+              "target_name":"Zac Johnson",
+              "target_team_name":"No Team",
+              "target_user_role":"dm_user",
+              "target_kills":0
+           },
+           "63cb7690-9468-4982-a4da-95ec2ffe7319":{
+              "assassin_id":"63cb7690-9468-4982-a4da-95ec2ffe7319",
+              "assassin_name":"Zac Johnson",
+              "assassin_team_name":"No Team",
+              "assassin_user_role":"dm_user",
+              "assassin_kills":0,
+              "target_id":"ea50b303-da16-427c-8138-499d3bc31f46",
+              "target_name":"Ron Weasley",
+              "target_team_name":"No Team",
+              "target_user_role":"dm_user",
+              "target_kills":0
+           },
+           "7dccc355-16c7-4d52-879a-8d35c0adc1dc":{
+              "assassin_id":"7dccc355-16c7-4d52-879a-8d35c0adc1dc",
+              "assassin_name":"Harry Potter",
+              "assassin_team_name":"No Team",
+              "assassin_user_role":"dm_user",
+              "assassin_kills":0,
+              "target_id":"4e14e850-786d-46ad-9c5d-368a254b3689",
+              "target_name":"Ryan Lewis",
+              "target_team_name":"No Team",
+              "target_user_role":"dm_user",
+              "target_kills":0
+           },
+           "ea50b303-da16-427c-8138-499d3bc31f46":{
+              "assassin_id":"ea50b303-da16-427c-8138-499d3bc31f46",
+              "assassin_name":"Ron Weasley",
+              "assassin_team_name":"No Team",
+              "assassin_user_role":"dm_user",
+              "assassin_kills":0,
+              "target_id":"0195ec3c-d53f-4963-b645-a31d457e2079",
+              "target_name":"Hermione Granger",
+              "target_team_name":"No Team",
+              "target_user_role":"dm_user",
+              "target_kills":0
+           }
+        }
+
+## Team [/game/<game_id>/team/]
+### Get a list of teams for a game [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        [
+           {
+              "team_id":"28511ec6-44ef-4b49-9fa2-4311a0eaee5f",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Art/Layout"
+           },
+           {
+              "team_id":"2602672f-0b42-4cfc-be97-46c687af3f11",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Community Events"
+           },
+           {
+              "team_id":"d43fa392-56bd-4489-83ca-b9f09475f4cf",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Dancer Relations"
+           },
+           {
+              "team_id":"51d9a2e1-8299-4e1e-bf91-f1b83fc2177c",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Delegates"
+           },
+           {
+              "team_id":"8c7f42c4-f498-44f7-a7ba-30530631df70",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Entertainment"
+           },
+           {
+              "team_id":"6320647e-beb0-4ce3-becf-1e4cf85d8e47",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Family Relations"
+           },
+           {
+              "team_id":"c00ed39e-24d1-4b2b-a62e-8d0594f0c2fc",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Finance"
+           },
+           {
+              "team_id":"1be27036-ba60-49e0-9f6b-f81953cf32e1",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Hospitality"
+           },
+           {
+              "team_id":"8771f435-0ba3-4d6f-98a9-d302bebdf83d",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Managers"
+           },
+           {
+              "team_id":"631ae71e-eda8-4d65-b1f6-32a01a263036",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Marathon Relations"
+           },
+           {
+              "team_id":"7c4ff7f0-ba18-41b0-9f33-f531dcb56dd0",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Marketing"
+           },
+           {
+              "team_id":"2bd63351-4cc8-48f1-811f-1b6d37d4deb0",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Morale"
+           },
+           {
+              "team_id":"8e5ae750-d723-4534-a69f-211787be3c3e",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Operations"
+           },
+           {
+              "team_id":"fc70a419-471a-46e5-90fb-a55522b95d60",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Public Relations"
+           },
+           {
+              "team_id":"9603603d-e015-4400-9ccb-5b6334659098",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Recruitment"
+           },
+           {
+              "team_id":"d480a1a2-0030-4585-b19b-50384ef57f18",
+              "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+              "team_name":"Technology"
+           }
+        ]
+
+### Creates a team for a game [POST]
++ Request (application/json)
+
+        {
+            "team_name" : "YCombinator"
+        }
+
++ Response 201 (application/json)
+
+        {
+           "team_id":"9216e212-a1e6-4f85-804f-d2e243a5184d",
+           "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+           "team_name":"YCombinator"
+        }
+
+## Team/TeamId [/game/<game_id>/team/<team_id>/]
+### Get a team by id [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "team_id":"d480a1a2-0030-4585-b19b-50384ef57f18",
+           "game_id":"d480a1a2-0030-4585-b19b-50384ef57f18",
+           "team_name":"Technology"
+        }
+
+### Rename a team [PUT]
++ Request (application/json)
+
+        {
+           "team_id":"9216e212-a1e6-4f85-804f-d2e243a5184d",
+           "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+           "team_name":"DMatUF"
+        }
++ Response 200 (application/json)
+
+        {
+           "team_id":"9216e212-a1e6-4f85-804f-d2e243a5184d",
+           "game_id":"9f381ec6-2d07-42a5-bb2b-b31424850936",
+           "team_name":"DMatUF"
+        }
+
+### Delete a team [DELETE]
+
++ Request (application/json)
+
++ Response 204 (application/json)
+
+# Group Game/Users
+## Users/ [/game/<game_id>/users/]
+### Get all users for a game [GET]
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "5c739d8e-1194-4226-a279-03e50377acf5":{
+              "user_id":"5c739d8e-1194-4226-a279-03e50377acf5",
+              "username":"",
+              "email":"matt+admin@dmassassins.com",
+              "facebook_id":"10152622020481913",
+              "properties":{
+                 "alive":"true",
+                 "allow_email":"true",
+                 "allow_post":"false",
+                 "facebook":"https://facebook.com/10152622020481913",
+                 "first_name":"Matt",
+                 "last_name":"Gerstman",
+                 "photo":"https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/t31.0-8/q82/p180x540/10620140_10152819665341913_4672725081441389456_o.jpg",
+                 "photo_thumb":"https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/q82/p75x225/10710631_10152819665341913_4672725081441389456_n.jpg?oh=aab9c8036dfa790d58f2bc6f1c87e707\u0026oe=55941F8F\u0026__gda__=1433903409_d0e55d71c07def624835b6b3b2651643",
+                 "team":"null",
+                 "user_role":"dm_admin"
+              }
+           }
+        }
+
+## Users/Email [/game/<game_id>/users/email/]
+### Get Emails for all users [GET]
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "alive":[
+              "matt+admin@dmassassins.com"
+           ],
+           "all":[
+              "matt+admin@dmassassins.com"
+           ]
+        }
+
+
+# Group Game/User
+## User [/game/<game_id>/user/<user_id>/]
+### Get a user's information in the context of a game [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "user_id":"79465c81-5044-484c-be7c-c5aa1c482e61",
+           "username":"AbbeyJordan",
+           "email":"akonchan11@gmail.com",
+           "facebook_id":"10152447095593309",
+           "properties":{
+              "alive":"false",
+              "allow_email":"false",
+              "facebook":"https://facebook.com/10152447095593309",
+              "first_name":"Abbey",
+              "last_killed":"1416765117",
+              "last_name":"Jordan",
+              "name":"Abbey Jordan",
+              "photo":"https://graph.facebook.com/10152447095593309/picture?width=1000",
+              "photo_thumb":"https://graph.facebook.com/10152447095593309/picture?width=300\u0026height=300",
+              "secret":"ChandlerSkeeterSirius",
+              "team":"Family Relations",
+              "user_role":"dm_user"
+           }
+        }
+
+### Update user properties [PUT] 
+
++ Request (application/json)
+
+        Accepted Properties: (photo, photo_thumb, allow_email, allow_post, email)
+        {
+           "properties":{
+              "alive":"false",
+              "allow_email":"false",
+              "allow_posts":"true",
+              "facebook":"https://facebook.com/1517261158489822",
+              "first_name":"Ron",
+              "last_name":"Weasley",
+              "name":"Ron Weasley",
+              "photo":"https://graph.facebook.com/1517261158489822/picture?width=1000",
+              "photo_thumb":"https://graph.facebook.com/1517261158489822/picture?width=300&height=300",
+              "secret":"JustinBillJimmy",
+              "team":"",
+              "user_role":"dm_user",
+              "allow_post":"false"
+           }
+        }
+        
++ Response 200 (application/json)
+
+        null
+
+
+### Join a game [POST]
++ Request (application/json)
+
+        {
+            "game_password": "ForTheKids1",
+            "team_id": "00000000-00000000-00000000-00000000"
+        }
+        
++ Response 201 (application/json)
+
+        {
+           "user_id":"ea50b303-da16-427c-8138-499d3bc31f46",
+           "game_id":"e288edc7-cc4e-4885-a3b5-e328f154c3ad",
+           "team_id":"",
+           "user_role":"dm_user",
+           "secret":"DuckBillNicole",
+           "kills":0,
+           "alive":true
+        }
+    
+### Let a user quit the game [DELETE]
++ Request
+
+    + Headers
+    
+            x-dmassassins-secret: CharlieLudoFudge
+
++ Response 204
+
+## Ban [/game/<game_id>/user/<user_id>/ban/]
+### Ban a user [DELETE]
++ Request
+
+    + Headers
+        
+            x-DMAssassins-Send-Email: false
+        
++ Response 204
+
+## Kill [/game/<game_id>/user/<user_id>/kill/]
+### Kills a user [POST]
++ Request (application/json)
+
+            {
+               "send_email":false
+            }
+
++ Response 204
+
+## Revive [/game/<game_id>/user/<user_id>/revive/]
+### Revive a user [POST]
++ Request (application/json)
+
+            {
+               "send_email":false
+            }
++ Response 204
+
+## Role [/game/<game_id>/user/<user_id>/role/]
+### Change a user's role [POST]
++ Request (application/json)
+
+        {
+            "role": dm_super_admin
+        }
+            
++ Response 201
+
+# Group Game/User/Target
+## Target [/game/<game_id>/user/<user_id>/target/]
+### Get Target [GET]
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "user_id":"548a02a4-52d3-425f-b0f9-18ac2bc68a3b",
+           "username":"RyanLewis",
+           "email":"matt+ryanlewis@dmassassins.com",
+           "facebook_id":"347343548763059",
+           "properties":{
+              "allow_email":"true",
+              "allow_post":"false",
+              "facebook":"https://facebook.com/347343548763059",
+              "first_name":"Ryan",
+              "last_killed":"1419446798",
+              "last_name":"Lewis",
+              "name":"Ryan Lewis",
+              "photo":"https://graph.facebook.com/347343548763059/picture?width=1000",
+              "photo_thumb":"https://graph.facebook.com/347343548763059/picture?width=300"
+           }
+        }
+
+### Kill Target [DELETE]
++ Request
+
+    + Headers
+    
+            X-DMAssassins-Secret:TomRachelHermione
++ Response 200
+
+## Friends [/game/<game_id>/user/<user_id>/target/friends/]
+### Get a user's mutual friends with their target
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {
+           "count":2,
+           "friends":[
+              {
+                 "facebook_id":"334599530035888",
+                 "user_name":"HarryPotter"
+              },
+              {
+                 "facebook_id":"1389615437995324",
+                 "user_name":"SteveJobs"
+              },
+              {
+                 "facebook_id":"1465920003684029",
+                 "user_name":"HermioneGranger"
+              }
+           ]
+        }
+        
+# Group Misc
+## Unsubscribe [/unsubscribe/<user_id>/]
+### Unsubscribe Email [GET]
++ Request (application/json)
+
++ Response 200 (application/json)
+    
+        {}
+
+## Support [/support/]
+### File a support ticket [POST]
++ Request (application/json)
+
+            {
+               "name":"Harry Potter",
+               "email":"matt+harrypotter@dmassassins.com",
+               "subject":"Voldemort is Back!",
+               "message":"Why won't anyone believe me?!?"
+            }
++ Response 201 (application/json)
+
+        {
+            "issue_num":209
+        }
+
+## Session [/session/]
+### Create a session [POST]
++ Request (application/json)
+        
+        {
+            "facebook_id": "334599530035888"
+            "facebook_token": "CAAJPKJ2eMPIBAHZAZBIlseccVMTMpUnuSoFipUNqhPZBUvRO0396w7r3v5zZBZC4Qsh5jEvTgiRuudUOJAcMjmNPep4VW2zrbeD6sbqxnycgZB2WcokzKWFyRZB2hJi4Cbwvl1ZATa1MlNXX3ZCjyN1tiNXqzI8q1XdppPx5hOP5Mq8X4qfCNMWZCqxU36YH3h0InC01HKTp7NHJfxZCJ5H1p5onXIyXmPuNh4ZD",
+            "game_id" : null
+        }
+            
++ Response 201 (application/json)
+
+        {
+           "game":{
+              "game_id":"8989a106-8116-43da-93f6-1c5618139551",
+              "game_name":"Silicon Valley Test Game",
+              "game_started":false,
+              "game_has_password":false,
+              "game_properties":{
+                 "has_kill_timer":"false",
+                 "rules":"##Killing\n\nTo assassinate your target perform the following steps:\n\n1. Shoot them with silly string. \n2. Ask the user for their secret\n3. Enter their secret on the website.\n4. Receive your new target.\n\nIf your assassins shoots you, you are eliminated from the game and you must give up your secret.\nYou are only allowed to kill the person who is your current target on the website.\n\n##Defense\nTo defend your self from assassination, you may shoot your assassin with silly string. This will grant you 30 minutes of immunity.\n\n##Safe Zones\nThe third-floor corridor is forbidden to all users who do not wish to die a most painful death.\n\n##Winners\nThe winners will be the last player standing and the player with the most kills.\nIn the event of a draw or multiple winners, the distribution of prizes will be determined by the admin.\n\n##Pauses\nThe game may be paused at the admin's discretion. You will be notified of this by email.\n\n##Plot Twists\n\nThere will be several plot twists that will change the game dynamic. You will be notified of these by email.\n\n##Cheating\nIf a player is caught cheating they will be completely removed from the game.\nIf someone refuses to give up their secret, you can contact the admin at [imatt711@me.com](mailto:imatt711@me.com).",
+                 "teams_enabled":"false"
+              }
+           },
+           "token":"CAAJPKJ2eMPIBALdwkFHPsu7C133MgFKSJIcE5pnWjGZBNcUNkRjT9HVB4Fzgkix34EMWuYTiH3INqkaZB4OizoATGYNwHujCUAvon7YZA1YJQYd626DSze7GDT9ZBtOpBM5ATavTV9L5utKXxjZACZCiDztPCvSHOpilMQ6UOyKcozJ3onxz2bUcf3ejRbxl0ZD",
+           "user":{
+              "user_id":"548a02a4-52d3-425f-b0f9-18ac2bc68a3b",
+              "username":"RyanLewis",
+              "email":"matt+ryanlewis@dmassassins.com",
+              "facebook_id":"347343548763059",
+              "properties":{
+                 "allow_email":"true",
+                 "allow_post":"false",
+                 "facebook":"https://facebook.com/347343548763059",
+                 "first_name":"Ryan",
+                 "last_killed":"1419446798",
+                 "last_name":"Lewis",
+                 "name":"Ryan Lewis",
+                 "photo":"https://graph.facebook.com/347343548763059/picture?width=1000",
+                 "photo_thumb":"https://graph.facebook.com/347343548763059/picture?width=300"
+              }
+           }
+        }

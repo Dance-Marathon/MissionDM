@@ -1,0 +1,11 @@
+Hey %recipient.first_name%,
+
+"The time has come," the walrus said, "to talk of many things: of hunting friends, avoiding capture, and ending deadly games."
+
+With that, {{.GameName}} Assassins has come to an end. We hope you've enjoyed playing. The winner(s) will be announced by your game admin seperately. Log in to check out the leaderboard.
+
+Sincerely,
+The Assassins Team
+
+
+To unsubscribe from all future Assassins emails go to http://{{.APIDomain}}unsubscribe/%recipient.user_id%

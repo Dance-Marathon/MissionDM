@@ -1,0 +1,151 @@
+/*
+// assets/styles/site.less
+// dmassassins.js
+//
+// Copyright (c) 2014 Matt Gerstman
+// MIT License.
+//
+*/
+
+body {
+    padding: 70px 0 60px 0;
+}
+
+a,a:focus {
+    outline:none
+}
+
+a:hover {
+    text-decoration:none;
+}
+
+.user-column {
+    max-width:@width-standard;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.thumbnail {
+    max-width:@width-standard;
+    max-height:@height-standard;
+    margin:0 auto;
+    cursor: pointer;
+//    overflow:hidden;
+}
+
+.footer {
+    background-color:#f8f8f8;
+    height:40px;
+}
+
+.footer-fixed-bottom {
+    bottom: 0;
+    border-top: 1px solid #e7e7e7;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.footer-text {
+    color:#777;
+    margin-top:09px;
+}
+
+.footer-text a, .footer-text a:visited {
+    color:#777;
+}
+
+.footer-text a:hover {
+    color:black;
+}
+
+.logo {
+    margin-bottom:30px;
+}
+
+.input-secret {
+    width:190px;
+    float:left;
+    margin-left:5px;
+}
+.btn-kill  {
+    margin:0 5px;
+}
+
+.email-setting {
+    margin-left:3px;
+    cursor:pointer;
+}
+
+.active {
+    background: #e7e7e7;
+}
+
+
+.rules-saved {
+    margin-left:5px;
+    display: inline;
+
+}
+
+.profile-thumbnail {
+    max-width:300px;
+}
+
+.profile-thumbnail-container {
+    max-height:290px;
+    overflow:hidden;
+}
+.profile-buttons {
+    margin:10px auto;
+}
+
+.target-friend {
+    margin:0 5px 15px 5px;
+}
+.btn-target-friends {
+    margin:0 0 10px 0;
+}
+
+.container-profile-select {
+    height:450px;
+}
+
+.container-profile-select-photo, .container-select-page {
+    text-align: center;
+    height:150px;
+}
+
+.profile-select-photo, .select-page {
+    .m-transform(translateY(-50%));
+    cursor: pointer;
+    max-width:150px;
+    border-radius:5px;
+    border: 3px solid black;
+    position: relative;
+    top: 50%;
+}
+
+.profile-select-photo:hover, .select-page:hover {
+    border:3px solid #2b4b90;
+}
+
+.arrow-inactive {
+    cursor:default;
+    color:grey;
+}
+
+.arrow-active {
+    cursor:pointer;
+    color:black;
+}
+
+.page-title {
+    margin:0 0 10px 0;
+    cursor:pointer;
+}
+
+.page-title:hover {
+    color: #2b4b90;
+}

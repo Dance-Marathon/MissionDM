@@ -1,0 +1,8 @@
+Hey %recipient.first_name%,
+
+Your admin for {{.GameName}} Assassins has decided to cancel the kill timer. Nothing else has changed. Happy Hunting!
+
+Sincerely,
+The Assassins Team
+
+To unsubscribe from all future Assassins emails go to http://{{.APIDomain}}unsubscribe/%recipient.user_id%

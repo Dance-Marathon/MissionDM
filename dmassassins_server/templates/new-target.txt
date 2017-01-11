@@ -1,0 +1,8 @@
+Hey %recipient.first_name%,
+
+Due to unforseen circumstances, our hand has been forced and you have been given a new target in {{.GameName}} Assassins. Log in at http://playassassins.com to discover who it is.
+
+Good Luck!
+The Assassins Team
+
+To unsubscribe from all future Assassins emails go to http://{{.APIDomain}}unsubscribe/%recipient.user_id%

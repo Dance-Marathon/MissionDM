@@ -1,0 +1,8 @@
+Hey %recipient.first_name%,
+
+Unfortunately, the timer has run out and you didn't make a kill. As a result, you have died in {{.GameName}} Assassins. Better luck next time. We hope you enjoyed playing!
+
+Sincerely,
+The Assassins Team
+
+To unsubscribe from all future Assassins emails go to http://{{.APIDomain}}unsubscribe/%recipient.user_id%
