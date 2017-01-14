@@ -227,7 +227,11 @@
         },
         // game selection route
         multigame: function() {
-            var view = new app.Views.MultiGameView();
+            //var view = new app.Views.MultiGameView();
+            //app.Running.AppView.setCurrentView(view);
+            //this.render();
+            //THIS HAS BEEN CHANGED BY ED
+            var view = new app.Views.JoinGameView();
             app.Running.AppView.setCurrentView(view);
             this.render();
         },
