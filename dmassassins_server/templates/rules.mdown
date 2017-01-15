@@ -1,4 +1,4 @@
-##Killing
+##DMMissionTest
 
 To assassinate your target perform the following steps:
 
