@@ -34,3 +34,6 @@ missiondm_server/js/captain
 
 src/github.com/
 src/code.google.com/
+
+bin/
+pkg/
