@@ -8,3 +8,5 @@ Each game of MissionDM is played with multiple players targeting each other. The
 This webapp is based on the original application by Matthew Gerstman, merely updated for usage by the Dance Marathon at the Univeristy of Florida organization.
 
 You can checkout the original application at [playassassins.org](http://playassassins.org) and the original repository [here](https://github.com/mattgerstman/DMAssassins).
+
+Make sure to download the necessary [libraries](https://app.box.com/s/xa611uadha6a7r6jiprivqyucpdzdwop)
