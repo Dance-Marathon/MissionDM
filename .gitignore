@@ -1,5 +1,5 @@
-dmassassins_server/dmassassins_server
-dmassassins_server/config.json
+missiondm_server/missiondm_server
+missiondm_server/config.json
 webapp/js/config.js
 webapp/bower_components
 dump.sql
@@ -13,23 +13,21 @@ webapp/index.html
 
 db_dump.sql
 
-dmassassins_server/npm-debug.log
+missiondm_server/npm-debug.log
 
-dmassassins_server/game.go
+missiondm_server/game.go
 
 webapp/npm-debug.log
 
-backup.sql
-
 .DS_Store
 
-dmassassins_server/config_new.json
+missiondm_server/config_new.json
 
-dmassassins_server/config_old.json
+missiondm_server/config_old.json
 
 
-dmassassins_server/js/superadmin
+missiondm_server/js/superadmin
 
-dmassassins_server/js/admin
+missiondm_server/js/admin
 
-dmassassins_server/js/captain
+missiondm_server/js/captain
