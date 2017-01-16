@@ -141,7 +141,7 @@ func (user *User) SendReviveEmail(GameName string) (id string, appErr *Applicati
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `You Have Been Reinstated In ` + GameName + ` Missions`
+	subject := `You Have Been Reactivated In ` + GameName + ` Missions`
 	tag := `Revived`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()

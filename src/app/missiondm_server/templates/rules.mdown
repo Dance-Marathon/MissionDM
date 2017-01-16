@@ -1,23 +1,25 @@
-##DMMissionTest
+##CompletingYourMission
 
-To assassinate your target perform the following steps:
+To complete your mission, perform the following steps:
 
-1. Shoot them with silly string. 
-2. Ask the user for their secret
-3. Enter their secret on the website.
-4. Receive your new target.
+1. Find Your assigned agent.
+2. Cover your target in silly string.
+2. Ask the compromised agent for his/her secret
+3. Enter his/her secret on the website.
+4. Receive your new mission.
 
-If your assassins shoots you, you are eliminated from the game and you must give up your secret.
-You are only allowed to kill the person who is your current target on the website.
+If another agent compromises you, you must give up your secret. You will only complete your mission if you use silly string on your assigned agent.
 
 ##Defense
-To defend your self from assassination, you may shoot your assassin with silly string. This will grant you 30 minutes of immunity.
+To defend your self from getting compromised by another agent, you may cover the agent with silly string. This will grant you 30 minutes of immunity.
 
 ##Safe Zones
-The third-floor corridor is forbidden to all users who do not wish to die a most painful death.
+While in class/classroom buildings (during class time), Dance Marathon events/meetings or at work, no agents of any kind are allowed to engage in missions.
+
+Turlington Plaza is also a safe Zone during Wednesday's Dance Marathon Check-ins.
 
 ##Winners
-The winners will be the last player standing and the player with the most kills.
+The winners will be the last agents standing and the agent with the most completed missions.
 In the event of a draw or multiple winners, the distribution of prizes will be determined by the admin.
 
 ##Pauses
