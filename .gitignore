@@ -1,7 +1,7 @@
-missiondm_server/missiondm_server
-missiondm_server/config.json
-webapp/js/config.js
-webapp/bower_components
+src/app/missiondm_server/missiondm_server
+src/app/missiondm_server/config.json
+src/app/webapp/js/config.js
+src/app/webapp/bower_components
 src/app/missiondm_server/config.json
 src/app/webapp/js/config.js
 src/app/missiondm_server/js/admin
@@ -9,33 +9,33 @@ src/app/missiondm_server/js/superadmin
 src/app/missiondm_server/js/captain
 dump.sql
 fixer.sh
-webapp/bower.json
-webapp/dist
+src/app/webapp/bower.json
+src/app/webapp/dist
 
-webapp/dist/DMAssassins.min.js
+src/app/webapp/dist/DMAssassins.min.js
 
-webapp/index.html
+src/app/webapp/index.html
 
-db_dump.sql
+src/app/database/db_dump.sql
 
-missiondm_server/npm-debug.log
+src/app/missiondm_server/npm-debug.log
 
-missiondm_server/game.go
+src/app/missiondm_server/game.go
 
-webapp/npm-debug.log
+src/app/webapp/npm-debug.log
 
 .DS_Store
 
-missiondm_server/config_new.json
+src/app/missiondm_server/config_new.json
 
-missiondm_server/config_old.json
+src/app/missiondm_server/config_old.json
 
 
-missiondm_server/js/superadmin
+src/app/missiondm_server/js/superadmin
 
-missiondm_server/js/admin
+src/app/missiondm_server/js/admin
 
-missiondm_server/js/captain
+src/app/missiondm_server/js/captain
 
 src/github.com/
 src/code.google.com/
