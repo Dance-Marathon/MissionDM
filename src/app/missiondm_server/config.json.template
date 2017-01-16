@@ -4,7 +4,7 @@
 	"fb_app_id": "",
 	"fb_app_secret" :"",
 	"fb_access_token" : "",
-	"database_url": "postgres://localhost?dbname=dmassassins&sslmode=disable",
+	"database_url": "postgres://localhost?dbname=dbname&sslmode=disable",
 	"sentry_dsn" : "",
 	"support_email": "",
 	"mailgun_public_key": "",
