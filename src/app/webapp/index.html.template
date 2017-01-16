@@ -62,7 +62,7 @@
     <meta name="google-site-verification" content="yRrmu_JevwQq80UCPBJNVh1K-V-FbxVabk8wXBKpzgg" />
 
     <!-- @if NODE_ENV='PRODUCTION' -->
-    <title>Assassins</title>
+    <title>MissionDM</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!--link href="/assets/styles/bootswatch.css" rel="stylesheet" type="text/css"-->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -71,7 +71,7 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.7.0/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css">
     <!-- @endif -->
     <!-- @if NODE_ENV='DEVELOPMENT' -->
-    <title>DevAssassins</title>
+    <title>DevMissionDM</title>
     <link href="/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="/bower_components/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href="/bower_components/bootstrap-social-buttons/social-buttons.css" rel="stylesheet" type="text/css">
