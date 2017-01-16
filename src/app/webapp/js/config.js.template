@@ -1,11 +1,11 @@
 var config = {
-    BRAND_NAME: 'DevAssassins',
+    BRAND_NAME: 'TestName',
     ENV: 'prod',
     VERSION: '1.1.0',
     DEFAULT_VIEW: 'target',
-    LOCAL_ROOT: '/Go/src/GitHub.com/mattgerstman/DMAssassins/webapp/',
-    WEB_ROOT: 'http://api.playassassins.com/',
-    CLIENT_ROOT: 'http://playassassins.com/',
+    LOCAL_ROOT: '/path/to/webapp',
+    WEB_ROOT: 'http://apilocation.com',
+    CLIENT_ROOT: 'http://websitelocation.com',
     APP_ID: 0,
     SENTRY_DSN : '',
     ALL_PERMISSIONS: 'public_profile,email,user_friends,user_photos'
