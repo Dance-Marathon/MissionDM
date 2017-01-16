@@ -1,14 +1,14 @@
 {
-  "name": "MissionDM",
+  "name": "DMAssassins",
   "version": "1.1.0",
-  "code_name": "Clarice",
-  "homepage": "http://missiondm.org",
+  "code_name": "Janice",
+  "homepage": "http://dmassassins.com",
   "author": {
-    "name": "Dance Marathon"
+    "name": "Matt Gerstman"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Dance-Marathon/MissionDM.git"
+    "url": "git://github.com/mattgerstman/DMAssassins.git"
   },
   "engines": {
     "node": ">= 0.10.0"

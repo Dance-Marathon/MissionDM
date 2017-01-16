@@ -11,6 +11,6 @@ cd $DIR/src/app/webapp
 grunt server &
 
 cd $DIR/src/app/missiondm_server
-/bin/sh run.sh &
+/bin/sh run_missiondm_server.sh &
 
 cd $DIR
