@@ -17,7 +17,11 @@ Make sure to download the necessary [libraries](https://app.box.com/s/xa611uadha
 In the application root folder (the one with `src/`), you will need to move the `pkg'/` and `bin/` folders from the above Box link.   
 You will then have to move the `code.github.com/` and `github.com/` dirs into the `src/` folder.     
 
-Once these are in place, you will need to make sure that the `src/app/webapp/js` folder has a `config.js` file, and the `src/app/missiondm_server` folder has a `config.json` file. The variables in these files are important as they contain the keys for the APIs that we are using. __Do not upload these files to github as they are secret.__    
+Once these are in place, you will need to make sure that the `src/app/webapp/js` folder has a `config.js` file. The variables in this file are important as they contain the keys for the APIs that we are using. __Do not upload this file to github as it is secret.__    
+
+You will also need to make sure that the `src/app/missiondm_server` folder has a `config.json` file.     
+
+There are included templates for both of these files, minus the keys of course.
 
 ## Running MissionDM
 
