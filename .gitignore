@@ -2,6 +2,11 @@ missiondm_server/missiondm_server
 missiondm_server/config.json
 webapp/js/config.js
 webapp/bower_components
+src/app/missiondm_server/config.json
+src/app/webapp/js/config.js
+src/app/missiondm_server/js/admin
+src/app/missiondm_server/js/superadmin
+src/app/missiondm_server/js/captain
 dump.sql
 fixer.sh
 webapp/bower.json
