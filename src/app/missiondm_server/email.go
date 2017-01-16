@@ -95,7 +95,7 @@ func (user *User) SendDeadEmail(GameName string) (id string, appErr *Application
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `You Have Been Killed In ` + GameName + ` Assassins`
+	subject := `You Have Been Compromised In ` + GameName + ` Missions`
 	tag := `Killed`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -141,7 +141,7 @@ func (user *User) SendReviveEmail(GameName string) (id string, appErr *Applicati
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `You Have Been Revived In ` + GameName + ` Assassins`
+	subject := `You Have Been Reinstated In ` + GameName + ` Missions`
 	tag := `Revived`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -187,7 +187,7 @@ func (user *User) SendNewTargetEmail(GameName string) (id string, appErr *Applic
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `You Have A New Target In ` + GameName + ` Assassins`
+	subject := `You Have A New Target In ` + GameName + ` Missions`
 	tag := `NewTarget`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -233,7 +233,7 @@ func (user *User) SendBanhammerEmail(GameName string) (id string, appErr *Applic
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `You Have Been Banned From ` + GameName + ` Assassins`
+	subject := `You Have Been Banned From ` + GameName + ` Missions`
 	tag := `Banhammer`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -278,7 +278,7 @@ func (user *User) SendAdminWelcomeEmail() (id string, appErr *ApplicationError) 
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `Welcome to Assassins!`
+	subject := `Welcome to MissionDM!`
 	tag := `WelcomeAdmin`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -322,7 +322,7 @@ func (user *User) SendUserWelcomeEmail() (id string, appErr *ApplicationError) {
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `Welcome to Assassins!`
+	subject := `Welcome to MissionDM!`
 	tag := `WelcomeUser`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -366,7 +366,7 @@ func (user *User) SendChangeEmailEmail() (id string, appErr *ApplicationError) {
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := `Assassins - Email Notification`
+	subject := `MissionDM - Email Notification`
 	tag := `ChangeEmail`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -410,7 +410,7 @@ func (game *Game) sendStartGameEmail() (id string, appErr *ApplicationError) {
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := game.GameName + ` Assassins Has Begun!`
+	subject := game.GameName + ` Missions Has Begun!`
 	tag := `StartGame`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -451,7 +451,7 @@ func (game *Game) sendGameOverEmail() (id string, appErr *ApplicationError) {
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := game.GameName + ` Assassins Is Over!`
+	subject := game.GameName + ` Missions Is Over!`
 	tag := `StartGame`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -512,7 +512,7 @@ func (game *Game) SendPlotTwistEmail(twistName string) (id string, appErr *Appli
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := game.GameName + ` Assassins - Plot Twist!`
+	subject := game.GameName + ` Missions - Plot Twist!`
 	tag := `PlotTwist`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -553,7 +553,7 @@ func (user *User) SendDefendWeakNewTargetEmail(gameName string) (id string, appE
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := gameName + ` Assassins - You have a new target!`
+	subject := gameName + ` Missions - You have a new target!`
 	tag := `DefendWeakNewTarget`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -598,7 +598,7 @@ func (user *User) SendDefendWeakKilledEmail(gameName string) (id string, appErr 
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := gameName + ` Assassins - Plot Twist: You're Dead`
+	subject := gameName + ` Missions - Plot Twist: You're Compromised`
 	tag := `DefendWeakKilled`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -666,7 +666,7 @@ func (game *Game) sendSurvivedTimerEmail(users []*User) (id string, appErr *Appl
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := game.GameName + ` Assassins - You Survived The Countdown!`
+	subject := game.GameName + ` Missions - You Survived The Countdown!`
 	tag := `SurvivedTimer`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -699,7 +699,7 @@ func (game *Game) sendKilledByTimerEmail(users []*User) (id string, appErr *Appl
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := game.GameName + ` Assassins - You Missed The Countdown!`
+	subject := game.GameName + ` Missions - You Missed The Countdown!`
 	tag := `KilledByTimer`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
@@ -737,7 +737,7 @@ func (game *Game) SendTimerDisabledEmail() (id string, appErr *ApplicationError)
 	htmlT.Execute(&htmlBodyBuffer, emailData)
 
 	// Set up the subject and contents of the email
-	subject := game.GameName + ` Assassins Cancelled Countdown`
+	subject := game.GameName + ` Missions Cancelled Countdown`
 	tag := `TimerDisabled`
 	body := bodyBuffer.String()
 	htmlBody := htmlBodyBuffer.String()
