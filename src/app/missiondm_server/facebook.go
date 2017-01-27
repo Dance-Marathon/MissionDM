@@ -74,6 +74,7 @@ func CreateUserFromFacebookToken(facebookToken string) (user *User, appErr *Appl
 
 	// Username's are a concatination of first/last names
 	username := firstName + ` ` + lastName
+	//usersName = username
 
 	// Set up user properties map, this will be inserted with the user
 	properties := make(map[string]string)

@@ -31,4 +31,4 @@ There will be several plot twists that will change the game dynamic. You will be
 
 ##Cheating
 If a player is caught cheating they will be completely removed from the game.
-If someone refuses to give up their secret, you can contact the admin at [%ADMINEMAIL%](mailto:%ADMINEMAIL%).
+If someone refuses to give up their secret, you can contact the admin at technology@floridadm.org.
