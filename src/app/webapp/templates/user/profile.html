@@ -1,6 +1,7 @@
 <div class="view text-center">
     <div class="row">
-        <label>Name:</label> <%= properties.name %>
+        <label>Name:</label> 
+          <%= properties.name %> 
     </div>
     <div class="row">
         <label>Email:</label> <a href="mailto:"<%= email %>"><%= email %></a>
@@ -13,17 +14,26 @@
             <label>Team:</label> <%= properties.team %>
         </div>
     <% } %>
-    <div class="row">
-        <div class="text-danger"><label>Secret:</label> <%= properties.secret %></div>
-        <p class="text-danger">
-            Give this to your operative that compromised you.
-        </p>
-    </div>
+  
+         
+      <div class="row">
+         <% if (properties.alive =="true") { %>   
+            <div class="text-danger"><label>Secret:</label> <%= properties.secret %></div>
+            <p class="text-danger">
+                Give this to your operative that compromised you.
+            </p>
+          <%} %>
+          <% if (properties.alive !="true") { %> 
+            <div class="text-danger">You Have Been Compromised</div>
+          <%} %>
+      </div>
+   
+
 
     <div class="row">
         <a class="thumbnail js-profile-picture">
             <div class="profile-thumbnail-container">
-                <img class="profile-thumbnail" src=<%= properties.photo_thumb %>>
+                <img class="img img-responsive profile-thumbnail <% if (properties.alive !="true") { %> user-dead <%} %>" src=<%= properties.photo_thumb %>>
             </div>
         </a>
     </div>

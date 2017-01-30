@@ -40,6 +40,7 @@
         },
         handleTarget: function() {
             var game = app.Running.Games.getActiveGame();
+            var edUser = app.Running.User.getProperty('alive');
             if (!game)
             {
                 this.set('target_disabled', true);
@@ -56,6 +57,18 @@
                 this.set('target_disabled', true);
                 return;
             }
+            if(edUser != null){ //checks if it should be greyed out for a target
+                //alert(edUser);
+                if(edUser == 'false'){
+                    this.set('target_disabled', true);
+                    return;
+                }
+                if(edUser == 'true'){
+                    this.set('target_disabled', false);
+                    return;
+                }
+            }
+
 
             this.set('target_disabled', false);
             return;
