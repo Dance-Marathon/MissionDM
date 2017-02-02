@@ -78,8 +78,8 @@ ALTER TABLE public.dm_games OWNER TO postgres;
 
 CREATE TABLE dm_kill_timers (
     game_id uuid,
-    create_ts bigint,
-    execute_ts bigint NOT NULL
+    create_ts timestamp without time zone DEFAULT now(),
+    execute_ts timestamp without time zone DEFAULT now()
 );
 
 
