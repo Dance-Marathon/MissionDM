@@ -1,0 +1,1 @@
+We do not collect any data pertaining to you, the user, other than what is explicitly granted by the Facebook login API which includes your email address and common public information such as your profile picture.
